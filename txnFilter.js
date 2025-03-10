@@ -39,12 +39,25 @@ const connection = new Connection(clusterApiUrl('mainnet-beta'), { commitment: '
 const connectionQuick = new Connection(RPC, { commitment: 'confirmed' })
 
 const checkTxnCount = async (walletAddress) => {
-    const wallet = await connectionQuick.getSignaturesForAddress(new PublicKey(walletAddress), { limit: 100 });
+    const wallet = await connectionQuick.getSignaturesForAddress(new PublicKey(walletAddress), {limit: 100});
     if (wallet) {
         return wallet.length;
     }
     return 0;
 
+}
+function kiemTraSoKetThucBang99(so) {
+    var rs = so.toFixed(2).endsWith('.99');
+    console.log(rs);
+    return rs
+}
+
+function kiemTraChiaHetCho10(so) {
+    if (so % 10 === 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 const checkAndPrintTransferTransactions = async (signature) => {
     try {
